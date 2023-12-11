@@ -1,0 +1,61 @@
+{% comment %}
+<!--
+Author: Ray-Eldath
+refer to:
+ - http://docs.mathjax.org/en/latest/options/index.html
+-->
+<!-- {% if site.mathjax %} -->
+	<!-- <script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script> -->
+	
+    <!-- <script type="text/x-mathjax-config"> -->
+      <!-- MathJax.Hub.Config({ -->
+		<!-- jax: ["input/TeX", "output/HTML-CSS"], -->
+		<!-- tex2jax: { -->
+			<!-- inlineMath: [ ["$", "$"] ], -->
+			<!-- displayMath: [ ["$$", "$$"] ], -->
+			<!-- skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] -->
+		<!-- }, -->
+		<!-- "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] } -->
+      <!-- }); -->
+    <!-- </script> -->
+<!-- {% endif %} -->
+
+<!-- https://www.jianshu.com/p/80be7ebb273f -->
+<!-- https://blog.csdn.net/weixin_33785972/article/details/89079115 -->
+
+{% endcomment %}
+
+{% if site.mathjax %}
+	<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+			skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code','a'],
+			inlineMath: [['$','$']],
+			<!-- 单行的公式自动被转换成了"\\(","\\)",随机应变，使用了以下格式声明 -->
+			displayMath: [["\\[","\\]"],["\\(","\\)"]],
+			<!-- 传统的配置方法 -->
+			<!-- inlineMath: [ ['$','$'], ["\\(","\\)"] ], -->
+			<!-- displayMath: [ ['$$','$$'], ["\\[","\\]"],  -->
+			processEscapes: true,
+			processRefs: true,
+			tags: 'all',
+			<!-- tagIndent: '0.8em' -->
+			<!-- processEscapes: false -->
+        },
+		"HTML-CSS": {
+			<!-- availableFonts: ["STIX","TeX"], //可选字体 -->
+			linebreaks: { automatic: true },
+			showMathMenu: false //关闭右击菜单显示
+		},
+		showProcessingMessages: false,
+		messageStyle: "none"
+    });
+	</script>
+	<!-- <script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>  -->
+	<script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 	
+	{% comment %}
+	<!-- <script type="text/javascript" src="/assets/MathJax-2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script> -->
+	<!-- <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> -->
+	{% endcomment %}
+{% endif %}
+
