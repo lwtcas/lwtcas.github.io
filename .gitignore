@@ -1,4 +1,4 @@
 _site
 .sass-cache
 README.md
-../pages/2_about.md
+/pages/2_about.md
